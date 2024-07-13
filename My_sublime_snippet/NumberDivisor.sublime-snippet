@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+int numberOfDivisors(int num) {
+    int total = 1;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            int e = 0;
+            do {
+                e++;
+                num /= i;
+            } while (num % i == 0);
+            total *= e + 1;
+        }
+    }
+    if (num > 1) {
+        total *= 2;
+    }
+    return total;
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>numberofDivisor</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
